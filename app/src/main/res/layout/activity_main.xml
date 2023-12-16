@@ -16,14 +16,35 @@
 
     <Button
         android:id="@+id/buttonNext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_marginBottom="90dp"
-        android:text="Mulai"
+        android:background="@drawable/circular"
+        android:backgroundTint="#D64B4B"
+        android:backgroundTintMode="add"
+        android:drawableTint="#DD0E0E"
+        android:foregroundTint="#833535"
 
         android:onClick="goToNextPage"
+        android:text="Mulai"
+        android:textColor="#FFFFFF"
+        android:textSize="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
+
+
+    <!--    <Button-->
+<!--        android:id="@+id/buttonNext"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginBottom="90dp"-->
+<!--        android:text="Mulai"-->
+
+<!--        android:onClick="goToNextPage"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.498"-->
+<!--        app:layout_constraintStart_toStartOf="parent" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>

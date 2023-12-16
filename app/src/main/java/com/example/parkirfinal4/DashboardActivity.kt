@@ -21,4 +21,9 @@ class DashboardActivity : AppCompatActivity() {
         val intent = Intent(this, MapsActivity::class.java)
         startActivity(intent)
     }
+
+    fun goToMap(view: View) {
+        val intent = Intent(this, MapsActivity::class.java)
+        startActivity(intent)
+    }
 }
