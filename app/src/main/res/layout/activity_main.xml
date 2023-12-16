@@ -14,17 +14,13 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="-95dp" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonNext"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginBottom="90dp"
         android:background="@drawable/circular"
-        android:backgroundTint="#D64B4B"
-        android:backgroundTintMode="add"
-        android:drawableTint="#DD0E0E"
         android:foregroundTint="#833535"
-
         android:onClick="goToNextPage"
         android:text="Mulai"
         android:textColor="#FFFFFF"
