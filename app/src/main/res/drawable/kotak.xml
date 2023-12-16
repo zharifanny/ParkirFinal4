@@ -8,8 +8,8 @@
     </item>
     <item>
         <shape android:shape="rectangle">
-            <solid android:color="#2ecc71" /> <!-- Green color in default state -->
-            <corners android:radius="8dp" />
+            <solid android:color="#00b0ba" /> <!-- Green color in default state -->
+            <corners android:radius="1dpdp" />
         </shape>
     </item>
 </selector>
