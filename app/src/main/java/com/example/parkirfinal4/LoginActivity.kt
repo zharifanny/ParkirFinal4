@@ -3,7 +3,6 @@ package com.example.parkirfinal4
 import DatabaseHelper
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -15,13 +14,10 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-
-
         val dbHelper = DatabaseHelper(this)
 
         val editTextLoginUsername = findViewById<EditText>(R.id.editTextLoginUsername)
         val editTextLoginPassword = findViewById<EditText>(R.id.editTextLoginPassword)
-
         val buttonLogin = findViewById<Button>(R.id.buttonLogin)
 
         buttonLogin.setOnClickListener {
@@ -46,10 +42,4 @@ class LoginActivity : AppCompatActivity() {
             }
         }
     }
-
-    fun goToNextPage(view: View) {
-        val intent = Intent(this, RegisterActivity::class.java)
-        startActivity(intent)
-    }
-
 }

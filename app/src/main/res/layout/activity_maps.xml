@@ -13,13 +13,14 @@
         tools:context=".MapsActivity" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/myButton"
+        android:id="@+id/PesanParkir"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="16dp"
-        android:text="PILIH"
+        android:text="PESAN"
+        android:onClick="goToPilihan"
         android:textColor="@color/white"
         android:background="@drawable/tombol_map"
         />

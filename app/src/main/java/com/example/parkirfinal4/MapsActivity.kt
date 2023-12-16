@@ -1,6 +1,8 @@
 package com.example.parkirfinal4
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.parkirfinal4.databinding.ActivityMapsBinding
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -17,34 +19,43 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        val mapFragment = supportFragmentManager
-            .findFragmentById(R.id.map) as SupportMapFragment
+        val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
     }
 
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
 
+        val parkingSpots = listOf(
+            LatLng(-7.796240934704353, 110.36399469167071),
+            LatLng(-7.813029139214178, 110.37699449156794),
+            LatLng(-7.822085153080336, 110.3646777884106),
+            LatLng(-7.813879477515826, 110.36566484109207),
+            LatLng(-7.83352180983347, 110.38227307888698)
+            // Add more LatLng objects for additional parking spots
+        )
 
-        // Add a marker in Sydney and move the camera
-        val parkinglot = LatLng(-7.796240934704353, 110.36399469167071)
-        val zoomLevel = 17.0f // Change this value as needed
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(parkinglot, zoomLevel))
-        mMap.addMarker(MarkerOptions().position(parkinglot).title("Parking Lot"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(parkinglot))
+        val zoomLevel = 14.0f // lower more far, higher nearer
+
+        for (spot in parkingSpots) {
+            mMap.addMarker(MarkerOptions().position(spot).title("Parking Spot"))
+
+        }
+
+        if (parkingSpots.isNotEmpty()) {
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(parkingSpots[0], zoomLevel))
+        }
+
+
     }
+
+    fun goToPilihan(view: View) {
+        val intent = Intent(this, PilihanParkirActivity::class.java)
+        startActivity(intent)
+
+    }
+
 }
