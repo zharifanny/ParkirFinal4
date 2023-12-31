@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".RincianPilihan">
+
+    <DatePicker
+        android:id="@+id/startDatePicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:calendarViewShown="false"
+        android:datePickerMode="spinner"
+        android:layout_marginBottom="16dp"/>
+
+    <DatePicker
+        android:id="@+id/endDatePicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:calendarViewShown="false"
+        android:datePickerMode="spinner"
+        android:layout_below="@id/startDatePicker"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/costPerDayTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Parking Lot Cost Per Day: $10"
+        android:textSize="18sp"
+        android:layout_below="@id/endDatePicker"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/calculateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        android:layout_below="@id/costPerDayTextView"
+        android:onClick="calculateTotalCost"/>
+
+    <TextView
+        android:id="@+id/totalCostTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Cost: "
+        android:textSize="18sp"
+        android:layout_below="@id/calculateButton"
+        android:layout_marginTop="16dp"/>
+
+</RelativeLayout>
